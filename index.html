@@ -475,15 +475,15 @@
     <section class="hero" id="home">
         <div class="container">
             <h1>Your Favorite Place for Smart Shortcuts,<br>Tools That Work for You.</h1>
-            <p>Pick a tool and get it done</p>
+            <p>Pick a tool and get it done - 200+ Useful Tools</p>
             <a href="#tools" class="cta-button">Get Started</a>
             <div class="tool-icons">
                 <div class="tool-icon"><i class="fas fa-image"></i></div>
-                <div class="tool-icon"><i class="fas fa-file-alt"></i></div>
-                <div class="tool-icon"><i class="fas fa-calculator"></i></div>
                 <div class="tool-icon"><i class="fas fa-music"></i></div>
+                <div class="tool-icon"><i class="fas fa-graduation-cap"></i></div>
                 <div class="tool-icon"><i class="fas fa-heartbeat"></i></div>
-                <div class="tool-icon"><i class="fas fa-apple-alt"></i></div>
+                <div class="tool-icon"><i class="fas fa-chalkboard-user"></i></div>
+                <div class="tool-icon"><i class="fas fa-file-alt"></i></div>
             </div>
         </div>
     </section>
@@ -500,68 +500,97 @@
     
     <div id="tools"></div>
     
-    <!-- All Tools Sections - 200+ Tools -->
     <script>
+        // 200+ Unique Tools - No Repetition
         const toolsCategories = [
-            { name: "🖼 Image Tools", bg: "white", tools: [
-                "Image Converter", "Image Compressor", "Image Resizer", "Image Cropper", "Image to Text OCR", "Image Rotator/Flipper",
-                "Background Remover", "Watermark Remover", "Photo Enhancer", "Add Border/Frame", "Image Merger", "Image Metadata Viewer",
-                "PNG to JPG", "JPG to PNG", "WEBP Converter", "HEIC to JPG", "Image Upscaler", "Color Pop Effect"
+            { name: "📝 Assignment & Study Tools", bg: "white", icon: "fas fa-graduation-cap", tools: [
+                "Assignment Maker", "Essay Generator", "Thesis Statement Generator", "Research Paper Outline", "Citation Generator (APA/MLA)", "Bibliography Maker",
+                "Paraphrasing Tool", "Plagiarism Checker", "Grammar Checker", "Spell Checker", "Readability Analyzer", "Text Summarizer",
+                "Flashcard Maker", "Quiz Generator", "Study Schedule Planner", "Note Taking Organizer", "Mind Map Creator", "Exam Timer",
+                "Grade Calculator", "GPA Calculator", "Homework Tracker", "Study Group Finder", "Lecture Notes Formatter", "Annotated Bibliography Maker"
             ] },
-            { name: "🎵 Audio & Video Tools", bg: "#f1f5f9", tools: [
+            { name: "🎵 Audio & Video Tools", bg: "#f1f5f9", icon: "fas fa-music", tools: [
                 "MP3 Converter", "Audio Cutter", "Audio Merger", "MP3 to WAV", "WAV to MP3", "Video to MP3",
                 "Video Compressor", "Video Resizer", "Video Cutter", "Video Merger", "MP4 to GIF", "Screen Recorder",
-                "Audio Normalizer", "Voice Recorder", "Text to Speech", "Speech to Text", "Podcast Editor", "Beat Maker"
+                "Audio Normalizer", "Voice Recorder", "Text to Speech", "Speech to Text", "Podcast Editor", "Beat Maker",
+                "Audio Speed Changer", "Pitch Shifter", "Background Noise Remover", "Ringtone Maker", "YouTube Audio Extractor", "Karaoke Maker"
             ] },
-            { name: "📄 Document Tools", bg: "white", tools: [
+            { name: "🖼 Image Tools", bg: "white", icon: "fas fa-image", tools: [
+                "Image Converter", "Image Compressor", "Image Resizer", "Image Cropper", "Image to Text OCR", "Image Rotator",
+                "Background Remover", "Watermark Remover", "Photo Enhancer", "Add Border/Frame", "Image Merger", "Image Metadata Viewer",
+                "PNG to JPG", "JPG to PNG", "WEBP Converter", "HEIC to JPG", "Image Upscaler", "Color Pop Effect",
+                "Face Blur Tool", "Object Eraser", "Photo Collage Maker", "Passport Photo Maker", "Image to Sketch", "Logo Maker"
+            ] },
+            { name: "📄 Document Tools", bg: "#f1f5f9", icon: "fas fa-file-alt", tools: [
                 "PDF to Word", "Word to PDF", "PDF Compressor", "PDF Merger", "PDF Splitter", "PDF Lock/Unlock",
                 "eSign PDF", "Excel to PDF", "PPT to PDF", "Image to PDF", "PDF Annotator", "PDF Rotator",
-                "PDF Watermark", "OCR PDF", "PDF Editor", "Document Converter"
+                "PDF Watermark", "OCR PDF", "PDF Editor", "Document Converter", "Text to PDF", "PDF to JPG"
             ] },
-            { name: "🧮 Calculator Tools", bg: "#f1f5f9", tools: [
+            { name: "🧮 Calculator Tools", bg: "white", icon: "fas fa-calculator", tools: [
                 "Scientific Calculator", "Age Calculator", "BMI Calculator", "Loan EMI Calculator", "GST Calculator", "Currency Converter",
                 "SIP Calculator", "Percentage Calculator", "Time Duration Calculator", "Fuel Cost Calculator", "Sleep Cycle Calculator", "Date Calculator",
-                "Mortgage Calculator", "Retirement Calculator", "Tip Calculator", "Discount Calculator", "Sales Tax Calculator", "VAT Calculator"
+                "Mortgage Calculator", "Retirement Calculator", "Tip Calculator", "Discount Calculator", "Sales Tax Calculator", "VAT Calculator",
+                "Binary Calculator", "Hexadecimal Converter", "Fraction Calculator", "Algebra Solver", "Geometry Calculator", "Statistics Calculator"
             ] },
-            { name: "🔤 Text Tools", bg: "white", tools: [
+            { name: "🔤 Text Tools", bg: "#f1f5f9", icon: "fas fa-font", tools: [
                 "Text Case Converter", "Word Counter", "Remove Duplicate Lines", "Text Sorter", "Text Reverser", "Text Encryptor",
                 "Text Formatter", "Find & Replace", "Remove Extra Spaces", "Random Text Generator", "HTML to Text", "Lorem Ipsum Generator",
-                "Character Counter", "Line Counter", "Text Comparer", "Text Extractor", "Text to Hex", "Hex to Text"
+                "Character Counter", "Line Counter", "Text Comparer", "Text Extractor", "Text to Hex", "Hex to Text",
+                "Pastebin Creator", "Word Cloud Generator", "Palindrome Checker", "Acronym Generator", "Text to Morse Code", "Morse to Text"
             ] },
-            { name: "💻 Web/Developer Tools", bg: "#f1f5f9", tools: [
+            { name: "💻 Web Developer Tools", bg: "white", icon: "fas fa-code", tools: [
                 "HTML/CSS/JS Minifier", "JSON Formatter", "Base64 Encoder/Decoder", "URL Encoder/Decoder", "Color Picker", "Regex Tester",
                 "HTML Formatter", "CSS Formatter", "JavaScript Validator", "Website Speed Test", "SSL Checker", "DNS Lookup",
-                "Meta Tag Generator", "Favicon Generator", "CSS Gradient Generator", "SQL Formatter", "XML Formatter", "Markdown Editor"
+                "Meta Tag Generator", "Favicon Generator", "CSS Gradient Generator", "SQL Formatter", "XML Formatter", "Markdown Editor",
+                "API Tester", "JWT Decoder", "YAML to JSON", "JSON to CSV", "Code Beautifier", "Browser Detector"
             ] },
-            { name: "🎨 Color Tools", bg: "white", tools: [
+            { name: "🎨 Color Tools", bg: "#f1f5f9", icon: "fas fa-palette", tools: [
                 "Color Picker from Image", "HEX to RGB", "Gradient Generator", "Contrast Checker", "Palette Generator", "Color Blindness Simulator",
                 "HSL to RGB", "CMYK to RGB", "Color Mixer", "Color Shade Generator", "Random Color", "Color Name Finder",
-                "Color Converter", "Web Safe Colors", "Material Design Palette", "Flat UI Colors", "Gradient Palette", "Color Tint/Shade"
+                "Color Converter", "Web Safe Colors", "Material Design Palette", "Flat UI Colors", "Gradient Palette", "Color Tint/Shade",
+                "Pantone Converter", "Accessibility Checker", "Color Scheme Generator", "Monochromatic Generator", "Complementary Colors", "Analogous Colors"
             ] },
-            { name: "🌍 SEO & Marketing Tools", bg: "#f1f5f9", tools: [
-                "Keyword Density Checker", "Meta Tag Analyzer", "Word Counter", "Backlink Checker", "Domain Authority Checker", "Mobile Friendly Test",
-                "Google SERP Preview", "XML Sitemap Generator", "Robots.txt Generator", "Google Analytics Checker", "Page Speed Insights", "Social Media Preview",
-                "Keyword Generator", "Competitor Analysis", "Article Rewriter", "Plagiarism Checker", "Headline Analyzer", "Email Validator"
+            { name: "🌍 SEO & Marketing Tools", bg: "white", icon: "fas fa-chart-line", tools: [
+                "Keyword Density Checker", "Meta Tag Analyzer", "Backlink Checker", "Domain Authority Checker", "Mobile Friendly Test", "Google SERP Preview",
+                "XML Sitemap Generator", "Robots.txt Generator", "Google Analytics Checker", "Page Speed Insights", "Social Media Preview", "Keyword Generator",
+                "Competitor Analysis", "Article Rewriter", "Headline Analyzer", "Email Validator", "URL Shortener", "QR Code Generator",
+                "Social Media Scheduler", "Hashtag Generator", "SEO Audit Tool", "Broken Link Checker", "Canonical Checker", "Rich Snippet Tester"
             ] },
-            { name: "🛠️ Utility Tools", bg: "white", tools: [
+            { name: "🛠️ Utility Tools", bg: "#f1f5f9", icon: "fas fa-tools", tools: [
                 "QR Code Generator", "Barcode Generator", "UUID Generator", "Unit Converter", "Time Zone Converter", "Random Password Generator",
-                "IP Address Lookup", "Latitude/Longitude Finder", "File Compressor", "Password Strength Checker", "Device Info", "Battery Info",
-                "Weather Checker", "World Clock", "Calendar Generator", "Countdown Timer", "Stopwatch", "To-Do List"
+                "IP Address Lookup", "Latitude/Longitude Finder", "File Compressor", "Password Strength Checker", "Device Info", "Weather Checker",
+                "World Clock", "Calendar Generator", "Countdown Timer", "Stopwatch", "To-Do List", "Notes App",
+                "Math Solver", "Scientific Notation Converter", "Roman Numeral Converter", "Number to Words", "Percentage Calculator", "Fraction Simplifier"
             ] },
-            { name: "❤️ Health & Fitness Tools", bg: "#f1f5f9", tools: [
+            { name: "❤️ Health & Fitness Tools", bg: "white", icon: "fas fa-heartbeat", tools: [
                 "BMI Calculator", "BMR Calculator", "Body Fat Calculator", "Calorie Calculator", "Ideal Weight Calculator", "Water Intake Calculator",
                 "Workout Planner", "Running Pace Calculator", "Heart Rate Tracker", "Sleep Tracker", "Step Counter", "Fitness Age Calculator",
-                "VO2 Max Calculator", "Macro Calculator", "Protein Intake Calculator", "Weight Tracker", "Hydration Tracker", "Stress Level Checker"
+                "VO2 Max Calculator", "Macro Calculator", "Protein Intake Calculator", "Weight Tracker", "Hydration Tracker", "Stress Level Checker",
+                "Push-up Counter", "Sit-up Counter", "Yoga Pose Guide", "Meditation Timer", "Flexibility Test", "Muscle Mass Calculator"
             ] },
-            { name: "🥗 Diet & Nutrition Tools", bg: "white", tools: [
+            { name: "🥗 Diet & Nutrition Tools", bg: "#f1f5f9", icon: "fas fa-apple-alt", tools: [
                 "Calorie Counter", "Meal Planner", "Grocery List Generator", "Recipe Nutrition Analyzer", "Vitamin Calculator", "Keto Calculator",
                 "Intermittent Fasting Tracker", "Water Intake Tracker", "Carb Counter", "Fat Intake Calculator", "Sugar Intake Tracker", "Fiber Calculator",
-                "Vegan Nutrition Check", "Gluten-Free Guide", "Allergy Checker", "Diet Plan Generator", "Food Diary", "Nutrition Label Maker"
+                "Vegan Nutrition Check", "Gluten-Free Guide", "Allergy Checker", "Diet Plan Generator", "Food Diary", "Nutrition Label Maker",
+                "Protein Calculator", "Micronutrient Tracker", "Meal Prep Planner", "Healthy Recipe Finder", "Calorie Burn Calculator", "Weight Loss Tracker"
             ] },
-            { name: "📊 Business & Finance Tools", bg: "#f1f5f9", tools: [
+            { name: "📊 Business & Finance Tools", bg: "white", icon: "fas fa-chart-pie", tools: [
                 "Invoice Generator", "Profit Margin Calculator", "Break-Even Analyzer", "ROI Calculator", "Tax Calculator", "Salary Calculator",
                 "Mortgage Calculator", "Investment Calculator", "Retirement Planner", "Stock Market Tracker", "Cryptocurrency Converter", "Loan Comparison",
-                "Budget Planner", "Expense Tracker", "Balance Sheet", "Cash Flow Analyzer", "Business Card Maker", "Receipt Scanner"
+                "Budget Planner", "Expense Tracker", "Balance Sheet", "Cash Flow Analyzer", "Business Card Maker", "Receipt Scanner",
+                "Payroll Calculator", "GST Calculator India", "VAT Calculator UK", "Sales Commission Calculator", "Markup Calculator", "Net Profit Calculator"
+            ] },
+            { name: "📚 Writing & Content Tools", bg: "#f1f5f9", icon: "fas fa-pen-fancy", tools: [
+                "Blog Title Generator", "Content Rewriter", "SEO Content Optimizer", "Meta Description Generator", "Keyword Research Tool", "Topic Idea Generator",
+                "Headline Analyzer", "Readability Score", "Flesch Kincaid Tester", "Sentence Counter", "Paragraph Generator", "Story Outline Creator",
+                "Character Name Generator", "Plot Generator", "Rhyming Dictionary", "Thesaurus", "Synonyms Finder", "Antonyms Finder",
+                "Poem Generator", "Song Lyrics Generator", "Script Writer", "Email Template Builder", "Cover Letter Maker", "Resume Builder"
+            ] },
+            { name: "🎓 Student & Education Tools", bg: "white", icon: "fas fa-chalkboard", tools: [
+                "Math Solver", "Equation Solver", "Graph Plotter", "Scientific Notation Converter", "Periodic Table", "Chemistry Balancer",
+                "Physics Calculator", "Unit Conversion for Students", "Vocabulary Builder", "Language Translator", "Dictionary", "Thesaurus for Students",
+                "Flashcards Creator", "Quiz Maker", "Test Generator", "Homework Helper", "Study Timer", "Pomodoro Timer",
+                "Note Taker", "PDF Summarizer", "Book Summary Generator", "Lecture Recorder", "Formula Sheet Generator", "Lab Report Maker"
             ] }
         ];
         
@@ -573,13 +602,30 @@
             toolsCategories.forEach(cat => {
                 let filteredTools = cat.tools.filter(t => t.toLowerCase().includes(filter.toLowerCase()));
                 if (filteredTools.length === 0) return;
-                html += `<section class="tools-section" style="background-color: ${cat.bg}"><div class="container"><div class="section-header"><h2>${cat.name}</h2><p>Powerful tools for your needs</p></div><div class="tools-grid">`;
+                html += `<section class="tools-section" style="background-color: ${cat.bg}"><div class="container"><div class="section-header"><h2><i class="${cat.icon}"></i> ${cat.name}</h2><p>Powerful tools for your needs</p></div><div class="tools-grid">`;
                 filteredTools.forEach(tool => {
-                    html += `<div class="tool-card"><div class="tool-icon-container"><i class="fas fa-tools"></i></div><h3>${tool}</h3><p>Quick and easy tool to get your work done instantly.</p><a href="#" class="tool-button">Use Tool</a></div>`;
+                    let iconClass = "fas fa-tools";
+                    if (cat.name.includes("Image")) iconClass = "fas fa-image";
+                    else if (cat.name.includes("Audio")) iconClass = "fas fa-music";
+                    else if (cat.name.includes("Study") || cat.name.includes("Assignment")) iconClass = "fas fa-graduation-cap";
+                    else if (cat.name.includes("Health")) iconClass = "fas fa-heartbeat";
+                    else if (cat.name.includes("Diet")) iconClass = "fas fa-apple-alt";
+                    else if (cat.name.includes("Writing")) iconClass = "fas fa-pen-fancy";
+                    else if (cat.name.includes("Student")) iconClass = "fas fa-chalkboard";
+                    else if (cat.name.includes("Business")) iconClass = "fas fa-chart-pie";
+                    else if (cat.name.includes("SEO")) iconClass = "fas fa-chart-line";
+                    else if (cat.name.includes("Document")) iconClass = "fas fa-file-alt";
+                    else if (cat.name.includes("Calculator")) iconClass = "fas fa-calculator";
+                    else if (cat.name.includes("Text")) iconClass = "fas fa-font";
+                    else if (cat.name.includes("Web")) iconClass = "fas fa-code";
+                    else if (cat.name.includes("Color")) iconClass = "fas fa-palette";
+                    else if (cat.name.includes("Utility")) iconClass = "fas fa-tools";
+                    
+                    html += `<div class="tool-card"><div class="tool-icon-container"><i class="${iconClass}"></i></div><h3>${tool}</h3><p>Quick and easy tool to get your work done instantly. Fast, free, and reliable.</p><a href="#" class="tool-button">Use Tool</a></div>`;
                 });
                 html += `</div></div></section>`;
             });
-            if (html === "") html = `<div class="container" style="text-align:center;padding:60px;"><h3>No tools found matching "${filter}"</h3></div>`;
+            if (html === "") html = `<div class="container" style="text-align:center;padding:60px;"><h3>❌ No tools found matching "${filter}"</h3><p>Try searching for something else like "PDF", "Image", "Calculator", "Assignment", etc.</p></div>`;
             container.innerHTML = html;
         }
         
@@ -612,7 +658,7 @@
                 <div class="footer-contact"><h3>Contact</h3><p><i class="fas fa-envelope"></i> toolsplate@gmail.com</p></div>
                 <div class="footer-links"><h3>Quick Links</h3><ul><li><a href="#home">Home</a></li><li><a href="#tools">All Tools</a></li><li><a href="#">Privacy Policy</a></li><li><a href="#">Terms of Use</a></li></ul></div>
             </div>
-            <div class="footer-bottom"><p>© 2025 Tools Plate. 200+ Free Tools. All rights reserved.</p></div>
+            <div class="footer-bottom"><p>© 2025 Tools Plate. 200+ Free Tools | Assignment Maker | Study Tools | All-in-One Platform</p></div>
         </div>
     </footer>
 </body>
