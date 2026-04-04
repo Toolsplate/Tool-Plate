@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Study Planner Generator - ToolsPlate</title>
+
+<style>
+body {
+  font-family: Arial;
+  background: #f3f4f6;
+  margin: 0;
+}
+
+header {
+  background: #4f46e5;
+  color: white;
+  padding: 15px;
+  text-align: center;
+}
+
+.container {
+  max-width: 800px;
+  margin: 30px auto;
+  background: white;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+input, textarea, select {
+  width: 100%;
+  padding: 10px;
+  margin-top: 10px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+}
+
+button {
+  margin-top: 15px;
+  padding: 12px;
+  width: 100%;
+  background: #4f46e5;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+button:hover {
+  background: #3730a3;
+}
+
+.result {
+  margin-top: 20px;
+}
+
+.day {
+  background: #eef2ff;
+  padding: 15px;
+  border-radius: 10px;
+  margin-bottom: 15px;
+}
+
+.day h3 {
+  margin: 0 0 10px;
+}
+
+.task {
+  padding: 5px 0;
+}
+
+.high { color: red; }
+.medium { color: orange; }
+.low { color: green; }
+
+a {
+  display: inline-block;
+  margin-top: 15px;
+  text-decoration: none;
+  color: #4f46e5;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+<h2>Advanced Study Planner</h2>
+</header>
+
+<div class="container">
+
+<label>Subjects (comma separated)</label>
+<textarea id="subjects" placeholder="Math, English, Science"></textarea>
+
+<label>Priority</label>
+<select id="priority">
+  <option value="high">High (more time)</option>
+  <option value="medium">Medium</option>
+  <option value="low">Low (less time)</option>
+</select>
+
+<label>Study Hours per Day</label>
+<input type="number" id="hours" placeholder="e.g. 5">
+
+<label>Break Time per Day (minutes)</label>
+<input type="number" id="break" placeholder="e.g. 30">
+
+<label>Number of Days</label>
+<input type="number" id="days" placeholder="e.g. 7">
+
+<button onclick="generatePlan()">Generate Planner</button>
+
+<div class="result" id="output"></div>
+
+<a href="../index.html">← Back to Home</a>
+
+</div>
+
+<script>
+function generatePlan() {
+  let subjects = document.getElementById("subjects").value.split(",");
+  let hours = parseFloat(document.getElementById("hours").value);
+  let days = parseInt(document.getElementById("days").value);
+  let priority = document.getElementById("priority").value;
+  let breakTime = parseInt(document.getElementById("break").value);
+
+  if (!subjects || !hours || !days) {
+    alert("Fill all fields!");
+    return;
+  }
+
+  let multiplier = 1;
+  if (priority === "high") multiplier = 1.5;
+  if (priority === "low") multiplier = 0.7;
+
+  let output = "";
+
+  for (let i = 1; i <= days; i++) {
+    output += `<div class="day"><h3>Day ${i}</h3>`;
+
+    subjects.forEach(sub => {
+      let time = ((hours / subjects.length) * multiplier).toFixed(1);
+      output += `<div class="task ${priority}">
+        ${sub.trim()} → ${time} hrs
+      </div>`;
+    });
+
+    output += `<div class="task">Break Time → ${breakTime} mins</div>`;
+    output += `</div>`;
+  }
+
+  document.getElementById("output").innerHTML = output;
+}
+</script>
+
+</body>
+</html>
